@@ -1,0 +1,33 @@
+.news__info {
+}
+.news__line{
+	display: flex;
+}
+.news__date {
+	flex: 0 0 100px;
+	margin: 10px 10px;
+}
+.news__content {
+	max-width: 500px;
+	margin: 10px 10px;
+}
+
+.news__navi{
+	display: flex;
+	justify-content: flex-end;
+	padding: 10px
+
+}
+.news__view {
+	color: #1f1fb5;
+	margin: 5px;
+}
+
+.news__edit {
+	color: #1f1fb5;
+	margin: 5px;
+}
+.news__title {
+	flex: 1 1 auto;
+	margin: 10px 10px;
+}

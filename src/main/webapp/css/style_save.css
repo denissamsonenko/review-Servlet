@@ -1,0 +1,38 @@
+.edit__news{
+	display: flex;
+	padding: 30px 10px;
+}
+.edit__title {
+	align-self: top;
+	width: 150px;
+	margin: 0px 0px 0px 40px;
+}
+.edit__textbox1 {
+	display: block;
+	min-height: 30px;
+	min-width: 350px;
+	border: 1px solid #000;
+	font-size: 16px;
+}
+.edit__textbox2 {
+	display: block;
+	min-height: 30px;
+	min-width: 100px;
+	border: 1px solid #000;
+	font-size: 16px;
+
+}
+.edit__textbox3 {
+	display: block;
+	min-height: 100px;
+	min-width: 400px;
+	font-size: 16px;
+	border: 1px solid #000;
+}
+.edit__textbox4 {
+	display: block;
+	min-height: 150px;
+	min-width: 400px;
+	border: 1px solid #000;
+	font-size: 16px;
+}
