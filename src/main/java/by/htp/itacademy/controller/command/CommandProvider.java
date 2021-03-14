@@ -14,7 +14,7 @@ import by.htp.itacademy.controller.command.impl.ShowAllNews;
 
 public class CommandProvider {
 
-	private Map <ParameterName, Command> commands = new HashMap<ParameterName, Command>();
+	private Map<ParameterName, Command> commands = new HashMap<ParameterName, Command>();
 
 	public CommandProvider() {
 		commands.put(ParameterName.SAVE_NEWS, new SaveNews());
@@ -26,16 +26,16 @@ public class CommandProvider {
 		commands.put(ParameterName.FIND_FOR_UPDATE, new FindForUpdate());
 		commands.put(ParameterName.CHANGE_LOCALE, new ChangeLocale());
 	}
-	
+
 	public Command getCommand(String commandName) {
 		Command command;
 		ParameterName valueName;
-		
+
 		commandName = commandName.toUpperCase();
 		valueName = ParameterName.valueOf(commandName);
-		
+
 		command = commands.get(valueName);
-		
+
 		return command;
 	}
 }

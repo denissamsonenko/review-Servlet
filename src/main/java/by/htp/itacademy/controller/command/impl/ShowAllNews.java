@@ -15,13 +15,13 @@ import by.htp.itacademy.service.NewsService;
 import by.htp.itacademy.service.ServiceException;
 import by.htp.itacademy.service.ServiceProvider;
 
-public class ShowAllNews implements Command{
-	
+public class ShowAllNews implements Command {
+
 	private static final String NEWS_PAGE = "/WEB-INF/jsp/showallnews.jsp";
 	private static final String CREATE_PAGE = "controller?command=create_news";
-	
+
 	private static final Logger logger = Logger.getLogger(ShowAllNews.class);
-	
+
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServiceProvider serviceProvider = ServiceProvider.getInstance();
@@ -34,15 +34,15 @@ public class ShowAllNews implements Command{
 			logger.error("findAll" + " " + e);
 			throw new ServletException("some error, try again");
 		}
-		
-		if(newsList.isEmpty()) {
+
+		if (newsList.isEmpty()) {
 			response.sendRedirect(CREATE_PAGE);
-		}else {	
-			
-		request.setAttribute("newsList", newsList);
-		
-		RequestDispatcher rd = request.getRequestDispatcher(NEWS_PAGE);
-		rd.forward(request, response);
-	}
+		} else {
+
+			request.setAttribute("newsList", newsList);
+
+			RequestDispatcher rd = request.getRequestDispatcher(NEWS_PAGE);
+			rd.forward(request, response);
+		}
 	}
 }
