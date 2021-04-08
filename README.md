@@ -1,5 +1,4 @@
-<p>Project name</p>
-</br>
+<p>Project name:</p>
 <h1>News Managment</h1>
-
-### :open_file_folder: Technology
+</br>
+### :open_file_folder: Description
