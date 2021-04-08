@@ -1,2 +1,2 @@
-# review-Servlet
-Project Using Servlet
+# project name
+<h1>News Managment</h1>
