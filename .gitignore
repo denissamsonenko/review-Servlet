@@ -9,6 +9,7 @@ target/**
 # eclipse specific
 *.pydevproject
 .project
+.DS_Store
 .metadata
 bin/**
 tmp/**

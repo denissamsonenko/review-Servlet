@@ -10,20 +10,20 @@ import by.htp.itacademy.service.NewsService;
 import by.htp.itacademy.service.ServiceException;
 import by.htp.itacademy.service.validation.ValidationNews;
 
-public class NewsServiceImpl implements NewsService{
+public class NewsServiceImpl implements NewsService {
 
 	private final DAOProvider provider = DAOProvider.getInstance();
 	private final NewsDAO newsDAO = provider.getNewsDAO();
-	
+
 	private static final Logger logger = Logger.getLogger(NewsServiceImpl.class);
-	
+
 	@Override
 	public void save(News news) throws ServiceException {
-		if(!ValidationNews.isCorrect(news)) {
+		if (!ValidationNews.isCorrect(news)) {
 			logger.error("invalid title,brief,content in SAVE");
 			throw new ServiceException("invalid title,brief,content");
 		}
-		
+
 		try {
 			newsDAO.create(news);
 		} catch (DAOException e) {
@@ -34,11 +34,11 @@ public class NewsServiceImpl implements NewsService{
 
 	@Override
 	public void update(News news) throws ServiceException {
-		if(!ValidationNews.isCorrect(news)) {
+		if (!ValidationNews.isCorrect(news)) {
 			logger.error("invalid title,brief,content in UPDATE");
 			throw new ServiceException("invalid title,brief,content");
 		}
-		
+
 		try {
 			newsDAO.update(news);
 		} catch (DAOException e) {
@@ -49,19 +49,19 @@ public class NewsServiceImpl implements NewsService{
 
 	@Override
 	public void delete(int id) throws ServiceException {
-		
+
 		try {
 			newsDAO.delete(id);
 		} catch (DAOException e) {
 			logger.error("Delete news err" + e);
 			throw new ServiceException(e);
-		}	
+		}
 	}
 
 	@Override
 	public News find(int id) throws ServiceException {
 		News news;
-		
+
 		try {
 			news = newsDAO.read(id);
 		} catch (DAOException e) {
@@ -74,13 +74,13 @@ public class NewsServiceImpl implements NewsService{
 	@Override
 	public List<News> findAll() throws ServiceException {
 		List<News> listNews;
-		
+
 		try {
 			listNews = newsDAO.readAll();
 		} catch (DAOException e) {
 			logger.error("FindAll news err" + e);
 			throw new ServiceException(e);
-		}			
-			return listNews;		
-	}	
+		}
+		return listNews;
+	}
 }

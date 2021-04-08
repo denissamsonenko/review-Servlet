@@ -3,18 +3,18 @@ package by.htp.itacademy.entity;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class News implements Serializable{
+public class News implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	private int id;
 	private String title;
 	private String brief;
 	private String content;
 	private LocalDate date;
-	
-	public News() {	
+
+	public News() {
 	}
-	
+
 	public News(int id, String title, String brief, String content, LocalDate date) {
 		this.id = id;
 		this.title = title;
@@ -113,5 +113,5 @@ public class News implements Serializable{
 	public String toString() {
 		return "News [id=" + id + ", title=" + title + ", brief=" + brief + ", content=" + content + ", date=" + date
 				+ "]";
-	}	
+	}
 }

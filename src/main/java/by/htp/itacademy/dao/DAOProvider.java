@@ -4,12 +4,12 @@ import by.htp.itacademy.dao.impl.SQLNewsDAO;
 
 public class DAOProvider {
 	private static DAOProvider instance;
-	
+
 	private static final NewsDAO newsDAO = new SQLNewsDAO();
-	
-	private DAOProvider() {	
+
+	private DAOProvider() {
 	}
-	
+
 	public NewsDAO getNewsDAO() {
 		return newsDAO;
 	}
@@ -18,6 +18,6 @@ public class DAOProvider {
 		if (instance == null) {
 			instance = new DAOProvider();
 		}
-			return instance;
+		return instance;
 	}
 }
